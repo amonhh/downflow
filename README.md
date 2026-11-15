@@ -18,6 +18,16 @@ user, and the extension stays honest when it is absent. See
 > transfers are used only when the server and file safely support them; otherwise
 > DownFlow falls back to Chrome's standard engine and shows a **Standard mode** chip.
 
+## Screenshots
+
+These are real captures of three segmented downloads in progress against a
+throttled local test server — the percentages, speeds, ETAs and segment strips
+come from the running engines. Regenerate them with `npm run screenshots`.
+
+![DownFlow dashboard showing three downloads in progress with speed, ETA and segment progress](store/screenshots/dashboard-downloading-1280x800.png)
+
+![DownFlow overview with active download statistics](store/screenshots/dashboard-overview-1280x800.png)
+
 ## Feature overview
 
 - **Popup** with active downloads, progress, speed, ETA, pause/resume/cancel,
@@ -98,6 +108,7 @@ The full beginner walkthrough is in [docs/WINDOWS_INSTALL.md](docs/WINDOWS_INSTA
 | `npm test` | Run all 22 Vitest suites (168 tests). |
 | `npm run test:report` | Run tests with the JSON reporter and regenerate `TEST_REPORT.md` from real results. |
 | `npm run smoke:browser` | Load `dist/` into a real Chromium browser and exercise popup, dashboard, APIs, native download and a segmented Range/OPFS download. Run `npm run build` first. |
+| `npm run screenshots` | Launch Chromium with `dist/`, run three throttled segmented downloads and rewrite the 1280×800 images in `store/screenshots/`. Run `npm run build` first. |
 | `npm run package:store` | Build and create `release/downflow-<version>-chrome.zip` for the Chrome Web Store. See [docs/WEBSTORE.md](docs/WEBSTORE.md). |
 | `npm run test:server` | Start the local verification server at `http://127.0.0.1:4310/` with Range files, a no-Range endpoint, 410/401 routes, an HLS playlist and a DASH manifest. `node scripts/manual-test-server.mjs 4321` picks another port. |
 | `npm run native:install` | Register the optional video-site helper. Add `--extension-id=<id>` and optionally `--download-ytdlp` and/or `--download-ffmpeg`. See [docs/VIDEO_SITES.md](docs/VIDEO_SITES.md). |

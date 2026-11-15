@@ -13,6 +13,7 @@
     "test:watch": "vitest",
     "test:report": "node scripts/test-report.mjs",
     "smoke:browser": "node scripts/smoke-extension.mjs",
+    "screenshots": "node scripts/capture-screenshots.mjs",
     "package:store": "npm run build && node scripts/package-store.mjs",
     "test:server": "node scripts/manual-test-server.mjs",
     "native:install": "node scripts/native-install.mjs",
